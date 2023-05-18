@@ -4,3 +4,7 @@
   border: solid 1px black;
   display: inline-block;
 }
+
+#button-random-color {
+  display: block;
+}
