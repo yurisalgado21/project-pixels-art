@@ -2,6 +2,8 @@ const cores = ['black', 'red', 'blue', 'green'];
 const paletta = document.createElement('ul');
 const body = document.querySelector('body');
 const buttom = document.getElementById('button-random-color');
+const pixelBoard = document.createElement('div');
+pixelBoard.id = 'pixel-board';
 
 function addCores(cor) {
   for (let indice = 0; indice < cor.length; indice += 1) {
@@ -38,9 +40,25 @@ const ramdomColors = (event) => {
     }
   }
 };
+
 buttom.addEventListener('click', ramdomColors);
 const coresFixadas = localStorage.getItem('colorPalette');
 console.log();
+
 if (coresFixadas) {
   ramdomColors(JSON.parse(coresFixadas));
 }
+
+const pixels = [];
+
+for (let i = 0; i < 5; i += 1) {
+  const row = [];
+  for (let j = 0; j < 5; j += 1) {
+    const pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    row.push(pixel);
+    pixelBoard.appendChild(pixel);
+  }
+  pixels.push(row);
+}
+document.body.appendChild(pixelBoard);
