@@ -61,3 +61,5 @@ for (let i = 0; i < 5; i += 1) {
   pixels.push(row);
 }
 document.body.appendChild(pixelBoard);
+const firstLi = document.querySelector('li');
+firstLi.classList.add('selected');
