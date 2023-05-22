@@ -63,3 +63,15 @@ for (let i = 0; i < 5; i += 1) {
 document.body.appendChild(pixelBoard);
 const firstLi = document.querySelector('li');
 firstLi.classList.add('selected');
+
+const selectColor = (event) => {
+  const selectedColor = event.target;
+  const colors = document.querySelectorAll('.color');
+  for (let index = 0; index < colors.length; index += 1) {
+    const color = colors[index];
+    color.classList.remove('selected');
+  }
+  selectedColor.classList.add('selected');
+};
+
+paletta.addEventListener('click', selectColor);
