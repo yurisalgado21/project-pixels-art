@@ -75,3 +75,15 @@ const selectColor = (event) => {
 };
 
 paletta.addEventListener('click', selectColor);
+
+const fillPixel = (event) => {
+  const selectedColor = document.querySelector('.color.selected');
+  const clickedPixel = event.target;
+  clickedPixel.style.backgroundColor = selectedColor.style.backgroundColor;
+};
+const pixelsEmBranco = document.querySelectorAll('.pixel');
+for (let i = 0; i < pixelsEmBranco.length; i += 1) {
+  const pixelBranco = pixelsEmBranco[i];
+  pixelBranco.addEventListener('click', fillPixel);
+}
+
