@@ -79,9 +79,26 @@ paletta.addEventListener('click', selectColor);
 
 const fillPixel = (event) => {
   const selectedColor = document.querySelector('.color.selected');
+  const pixBoard = document.querySelectorAll('.pixel');
+  const pixelBoardState = [];
   const clickedPixel = event.target;
   clickedPixel.style.backgroundColor = selectedColor.style.backgroundColor;
+  for (let i = 0; i < pixBoard.length; i += 1) {
+    pixelBoardState.push(pixBoard[i].style.backgroundColor);
+  }
+  localStorage.setItem('pixelBoard', JSON.stringify(pixelBoardState));
 };
+
+const LoadPixelBoardState = () => {
+  const pixelBoardState = JSON.parse(localStorage.getItem('pixelBoard'));
+  if (pixelBoardState) {
+    const pixelBoard = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixelBoard.length; index += 1) {
+      pixelBoard[index].style.backgroundColor = pixelBoardState[index];
+    }
+  }
+}
+
 const pixelsEmBranco = document.querySelectorAll('.pixel');
 for (let i = 0; i < pixelsEmBranco.length; i += 1) {
   const pixelBranco = pixelsEmBranco[i];
@@ -96,3 +113,4 @@ const limparPixelsBranco = () => {
 };
 
 buttomLimpar.addEventListener('click', limparPixelsBranco);
+LoadPixelBoardState();
