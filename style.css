@@ -5,9 +5,6 @@
   display: inline-block;
 }
 
-#button-random-color {
-  display: block;
-}
 
 #pixel-board {
   display: flex;
@@ -16,6 +13,7 @@
   width: 200px;
   height: 200px;
   position: relative;
+  top: 10px;
 }
 
 .pixel {
@@ -25,4 +23,24 @@
   box-sizing: border-box;
   background-color: rgb(255,255,255);
   flex: 0 0 20%;
+}
+
+body {
+  background-image: url('https://i.pinimg.com/originals/59/fc/9e/59fc9e86d0e553273b37388d8d857055.gif');
+  background-repeat: no-repeat;
+  background-size: 100%; 
+}
+
+#title {
+  color: rgb(230, 226, 226);
+}
+
+#button-random-color  {
+  display: block;
+}
+
+#clear-board {
+  position: absolute;
+  top: 140px;
+  left: 80px;
 }

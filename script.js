@@ -4,6 +4,7 @@ const body = document.querySelector('body');
 const buttom = document.getElementById('button-random-color');
 const pixelBoard = document.createElement('div');
 pixelBoard.id = 'pixel-board';
+const buttomLimpar = document.getElementById('clear-board');
 
 function addCores(cor) {
   for (let indice = 0; indice < cor.length; indice += 1) {
@@ -16,8 +17,8 @@ function addCores(cor) {
 }
 addCores(cores);
 paletta.setAttribute('id', 'color-palette');
-
 paletta.appendChild(buttom);
+body.appendChild(buttomLimpar);
 const ramdomColors = (event) => {
   let colors = document.getElementsByClassName('color');
   console.log(event);
@@ -87,3 +88,11 @@ for (let i = 0; i < pixelsEmBranco.length; i += 1) {
   pixelBranco.addEventListener('click', fillPixel);
 }
 
+const limparPixelsBranco = () => {
+  for (let index = 0; index < pixelsEmBranco.length; index += 1) {
+    const pixel = pixelsEmBranco[index];
+    pixel.style.backgroundColor = 'white';
+  }
+};
+
+buttomLimpar.addEventListener('click', limparPixelsBranco);
