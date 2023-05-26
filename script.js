@@ -17,7 +17,6 @@ function addCores(cor) {
 }
 addCores(cores);
 paletta.setAttribute('id', 'color-palette');
-paletta.appendChild(buttom);
 body.appendChild(buttomLimpar);
 const ramdomColors = (event) => {
   let colors = document.getElementsByClassName('color');
@@ -97,7 +96,7 @@ const LoadPixelBoardState = () => {
       pixelBoard[index].style.backgroundColor = pixelBoardState[index];
     }
   }
-}
+};
 
 const pixelsEmBranco = document.querySelectorAll('.pixel');
 for (let i = 0; i < pixelsEmBranco.length; i += 1) {
